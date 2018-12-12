@@ -1,5 +1,5 @@
 package gameOfLife;
-
+import java.util.*;
 public class Main
 {
 	/**
@@ -16,6 +16,18 @@ public class Main
 	 */
 	public static TileGrid createWorldAndAcceptCommands()
 	{
+		Scanner console= new Scanner(System.in);
+		System.out.println("Type number of rows: ");
+		String row= console.nextLine();
+		int row1= Integer.parseInt(row);
+		
+		Scanner console1= new Scanner(System.in);
+		System.out.println("Type number of rows: ");
+		String column= console1.nextLine();
+		int column1= Integer.parseInt(column);
+		
+		World x= new World(row1,column1);
+	String store= ""+row+column;
 		// HEY YOU!!
 		//
 		// For Checkpoint 1, you must implement this method fully.
