@@ -18,11 +18,11 @@ public class World implements TileGrid
 				x[z][y]=new ConstantTile(0);
 			}
 		}
-		for(int z=0;z<rows;z++)
+		for(int i=0;i<rows;i++)
 		{
-			for(int y=0; y<columns;y++)
+			for(int j=0; j<columns;j++)
 			{
-				core.API.paintSolidColor(rows, columns,x[z][y].getColor());
+				core.API.paintSolidColor(i, j,x[i][j].getColor());
 			}
 		}
 	}
