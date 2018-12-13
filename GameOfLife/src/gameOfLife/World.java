@@ -4,7 +4,6 @@ public class World implements TileGrid
 	private int rows;
 	private int columns;
 	private Tile[][]x;
-	private ConstantTile tile;
 			
 	public World(int rows, int columns)
 	{
@@ -23,7 +22,8 @@ public class World implements TileGrid
 		{
 			for(int y=1; y<=columns;y++)
 			{
-				core.API.paintSolidColor(rows, columns, x[z][y].getColor());
+				
+				core.API.paintSolidColor(rows, columns,x[z][y].getColor());
 			}
 		}
 		

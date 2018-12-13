@@ -21,23 +21,23 @@ public class Main
 		String row= console.nextLine();
 		int row1= Integer.parseInt(row);
 		
-		Scanner console1= new Scanner(System.in);
 		System.out.println("Type number of columns: ");
-		String column= console1.nextLine();
+		String column= console.nextLine();
 		int column1= Integer.parseInt(column);
 		
-		World x= new World(row1,column1);
+		
+		
 		String store= "";
-		Scanner console2= new Scanner(System.in);
 		System.out.println("Type a command: ");
-		String command = console2.nextLine();
+		String command = console.nextLine();
 		while(!command.equals("quit"))
 		{
-			x.processCommand(command);
+			//x.processCommand(command);
 			System.out.println("Type a command: ");
-			command = console2.nextLine();
+			command = console.nextLine();
 			store+=command;
 		}
+		World x= new World(row1,column1);
 		return x;
 	}
 	
