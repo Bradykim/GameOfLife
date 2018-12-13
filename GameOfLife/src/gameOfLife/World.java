@@ -1,11 +1,11 @@
 package gameOfLife;
-public class World
+public class World implements TileGrid
 {
 	private int rows;
 	private int columns;
 	private Tile[][]x;
 	private ConstantTile tile;
-	
+			
 	public World(int rows, int columns)
 	{
 		this.rows=rows;
@@ -16,7 +16,7 @@ public class World
 		{
 			for(int y=1; y<=columns;y++)
 			{
-				tile=new ConstantTile(0);
+				x[z][y]=new ConstantTile(0);
 			}
 		}
 		for(int z=1;z<=rows;z++)
@@ -33,11 +33,11 @@ public class World
 		Tile y= x[rows][columns];
 		return y;
 	}
-	public void setTile()
+	public void setTile(int row, int column, Tile tile)
 	{
 		
 	}
-	public void processCommand(String s)
+	public void processCommand(String command)
 	{
 		
 	}

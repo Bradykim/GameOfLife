@@ -14,7 +14,7 @@ public class Main
 	 * 
 	 * @return the World instance created
 	 */
-	public static World createWorldAndAcceptCommands()
+	public static TileGrid createWorldAndAcceptCommands()
 	{
 		Scanner console= new Scanner(System.in);
 		System.out.println("Type number of rows: ");
@@ -36,6 +36,7 @@ public class Main
 			x.processCommand(command);
 			System.out.println("Type a command: ");
 			command = console2.nextLine();
+			store+=command;
 		}
 		return x;
 	}

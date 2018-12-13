@@ -26,6 +26,7 @@ public class ConstantTile implements Tile
 		}
 		return r;
 	}
+	
 	public Tile getUpdatedTile(Tile[] neighbors)
 	{
 		ConstantTile  x= new ConstantTile(getAge());
