@@ -27,9 +27,17 @@ public class Main
 		int column1= Integer.parseInt(column);
 		
 		World x= new World(row1,column1);
-		String store= ""+row+column;
+		String store= "";
+		Scanner console2= new Scanner(System.in);
+		System.out.println("Type a command: ");
+		String command = console2.nextLine();
+		while(!command.equals("quit"))
+		{
+			x.processCommand(command);
+			System.out.println("Type a command: ");
+			command = console2.nextLine();
+		}
 		
-		return null;
 	}
 	
 	

@@ -4,7 +4,7 @@ public class World
 	private int rows;
 	private int columns;
 	private Tile[][]x;
-	
+	private ConstantTile tile;
 	
 	public World(int rows, int columns)
 	{
@@ -16,7 +16,7 @@ public class World
 		{
 			for(int y=1; y<=columns;y++)
 			{
-				x[z][y]=new ConstantTile(0);
+				tile=new ConstantTile(0);
 			}
 		}
 		for(int z=1;z<=rows;z++)
@@ -37,7 +37,7 @@ public class World
 	{
 		
 	}
-	public void processCommand()
+	public void processCommand(String s)
 	{
 		
 	}
