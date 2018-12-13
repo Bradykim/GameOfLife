@@ -9,7 +9,7 @@ public class World implements TileGrid
 	{
 		this.rows=rows;
 		this.columns=columns;
-		core.API.initialize(rows+1, columns+1);
+		core.API.initialize(rows, columns);
 		x= new Tile[rows][columns];
 		for(int z=0;z<rows;z++)
 		{
