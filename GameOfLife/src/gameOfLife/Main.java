@@ -27,14 +27,8 @@ public class Main
 		int column1= Integer.parseInt(column);
 		
 		World x= new World(row1,column1);
-	String store= ""+row+column;
-		// HEY YOU!!
-		//
-		// For Checkpoint 1, you must implement this method fully.
-		//
-		// Don't forget to return the World you created instead of null
+		String store= ""+row+column;
 		
-		// Fix this!
 		return null;
 	}
 	
