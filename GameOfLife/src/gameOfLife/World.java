@@ -22,11 +22,9 @@ public class World implements TileGrid
 		{
 			for(int y=1; y<=columns;y++)
 			{
-				
 				core.API.paintSolidColor(rows, columns,x[z][y].getColor());
 			}
 		}
-		
 	}
 	public Tile getTile(int rows,int columns)
 	{

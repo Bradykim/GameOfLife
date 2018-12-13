@@ -25,19 +25,18 @@ public class Main
 		String column= console.nextLine();
 		int column1= Integer.parseInt(column);
 		
-		
+		World x= new World(row1,column1);
 		
 		String store= "";
 		System.out.println("Type a command: ");
 		String command = console.nextLine();
 		while(!command.equals("quit"))
 		{
-			//x.processCommand(command);
+			x.processCommand(command);
 			System.out.println("Type a command: ");
 			command = console.nextLine();
 			store+=command;
 		}
-		World x= new World(row1,column1);
 		return x;
 	}
 	
