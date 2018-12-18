@@ -33,11 +33,10 @@ public class World implements TileGrid
 	}
 	public void setTile(int row, int column, Tile tile)
 	{
-		
+		tile= x[row][column];
 	}
 	public void processCommand(String command)
 	{
-		
 	}
 }
 
