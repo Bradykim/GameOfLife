@@ -18,13 +18,7 @@ public class World implements TileGrid
 				x[z][y]=new ConstantTile(0);
 			}
 		}
-		for(int i=0;i<rows;i++)
-		{
-			for(int j=0; j<columns;j++)
-			{
-				core.API.paintSolidColor(i, j,x[i][j].getColor());
-			}
-		}
+		redraw(rows,columns);
 	}
 	public Tile getTile(int rows,int columns)
 	{
@@ -34,9 +28,37 @@ public class World implements TileGrid
 	public void setTile(int row, int column, Tile tile)
 	{
 		tile= x[row][column];
+		redraw(rows,columns);
+		
 	}
+	
 	public void processCommand(String command)
 	{
+		String []s= command.split(" ");
+		String f= s[0];
+		String t= s[1];
+		String num=s[2];
+		if(f.equals("fill"))
+		{
+			for(int i=0;i<rows;i++)
+			{
+				for(int j=0; j<columns;j++)
+				{
+					
+				}
+			}
+		}
+		
+	}
+	public void redraw(int rows, int columns)
+	{
+		for(int i=0;i<rows;i++)
+		{
+			for(int j=0; j<columns;j++)
+			{
+				core.API.paintSolidColor(i, j,x[i][j].getColor());
+			}
+		}
 	}
 }
 
