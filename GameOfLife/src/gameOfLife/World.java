@@ -39,6 +39,10 @@ public class World implements TileGrid
 		String t= s[1];
 		String num=s[2];
 		int num2= Integer.parseInt(num);
+		String r=s[3];
+		int r2= Integer.parseInt(r);
+		String c=s[4];
+		int c2= Integer.parseInt(c);
 		if(f.equals("fill") && t.equals("rainbow"))
 		{
 			for(int i=0;i<rows;i++)
@@ -58,6 +62,28 @@ public class World implements TileGrid
 				{
 					x[i][j]= new ConstantTile(num2);
 					core.API.paintSolidColor(i, j,x[i][j].getColor());
+				}
+			}
+		}
+		if(f.equals("set") && t.equals("rainbow"))
+		{
+			for(int i=0;i<rows;i++)
+			{
+				for(int j=0; j<columns;j++)
+				{
+					x[i][j]= new RainbowTile(num2);
+					redraw(r2,c2);
+				}
+			}
+		}
+		if(f.equals("set") && t.equals("constant"))
+		{
+			for(int i=0;i<rows;i++)
+			{
+				for(int j=0; j<columns;j++)
+				{
+					x[i][j]= new ConstantTile(num2);
+					redraw(r2,c2);
 				}
 			}
 		}
