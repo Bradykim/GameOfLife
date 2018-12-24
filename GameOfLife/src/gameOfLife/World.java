@@ -38,13 +38,24 @@ public class World implements TileGrid
 		String f= s[0];
 		String t= s[1];
 		String num=s[2];
-		if(f.equals("fill"))
+		int num2= Integer.parseInt(num);
+		if(f.equals("fill") && t.equals("rainbow"))
 		{
 			for(int i=0;i<rows;i++)
 			{
 				for(int j=0; j<columns;j++)
 				{
-					
+					x[i][j]= new RainbowTile(num2);
+				}
+			}
+		}
+		if(f.equals("fill") && t.equals("constant"))
+		{
+			for(int i=0;i<rows;i++)
+			{
+				for(int j=0; j<columns;j++)
+				{
+					x[i][j]= new ConstantTile(num2);
 				}
 			}
 		}
