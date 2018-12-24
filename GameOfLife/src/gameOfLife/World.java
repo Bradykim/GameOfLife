@@ -36,57 +36,68 @@ public class World implements TileGrid
 	{
 		String []s= command.split(" ");
 		String f= s[0];
-		String t= s[1];
-		String num=s[2];
-		int num2= Integer.parseInt(num);
-		String r=s[3];
-		int r2= Integer.parseInt(r);
-		String c=s[4];
-		int c2= Integer.parseInt(c);
-		if(f.equals("fill") && t.equals("rainbow"))
+		
+		if(f.equals("fill"))
 		{
-			for(int i=0;i<rows;i++)
+			String t= s[1];
+			String num=s[2];
+			int num2= Integer.parseInt(num);
+			if(t.equals("rainbow"))
 			{
-				for(int j=0; j<columns;j++)
+				for(int i=0;i<rows;i++)
 				{
-					x[i][j]= new RainbowTile(num2);
-					core.API.paintSolidColor(i, j,x[i][j].getColor());
+					for(int j=0; j<columns;j++)
+					{
+						x[i][j]= new RainbowTile(num2);
+						core.API.paintSolidColor(i, j,x[i][j].getColor());
+					}
+				}
+			}
+			if(t.equals("constant"))
+			{
+				for(int i=0;i<rows;i++)
+				{
+					for(int j=0; j<columns;j++)
+					{
+						x[i][j]= new ConstantTile(num2);
+						core.API.paintSolidColor(i, j,x[i][j].getColor());
+					}
 				}
 			}
 		}
-		if(f.equals("fill") && t.equals("constant"))
+		if(f.equals("set"))
 		{
-			for(int i=0;i<rows;i++)
+			String t= s[1];
+			String num=s[2];
+			int num2= Integer.parseInt(num);
+			String r=s[3];
+			int r2= Integer.parseInt(r);
+			String c=s[4];
+			int c2= Integer.parseInt(c);
+			if(t.equals("rainbow"))
 			{
-				for(int j=0; j<columns;j++)
+				for(int i=0;i<rows;i++)
 				{
-					x[i][j]= new ConstantTile(num2);
-					core.API.paintSolidColor(i, j,x[i][j].getColor());
+					for(int j=0; j<columns;j++)
+					{
+						x[i][j]= new RainbowTile(num2);
+						redraw(r2,c2);
+					}
+				}
+			}
+			if(t.equals("constant"))
+			{
+				for(int i=0;i<rows;i++)
+				{
+					for(int j=0; j<columns;j++)
+					{
+						x[i][j]= new ConstantTile(num2);
+						redraw(r2,c2);
+					}
 				}
 			}
 		}
-		if(f.equals("set") && t.equals("rainbow"))
-		{
-			for(int i=0;i<rows;i++)
-			{
-				for(int j=0; j<columns;j++)
-				{
-					x[i][j]= new RainbowTile(num2);
-					redraw(r2,c2);
-				}
-			}
-		}
-		if(f.equals("set") && t.equals("constant"))
-		{
-			for(int i=0;i<rows;i++)
-			{
-				for(int j=0; j<columns;j++)
-				{
-					x[i][j]= new ConstantTile(num2);
-					redraw(r2,c2);
-				}
-			}
-		}
+			
 		
 	}
 	public void redraw(int rows, int columns)
