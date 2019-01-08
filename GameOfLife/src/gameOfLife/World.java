@@ -4,6 +4,7 @@ public class World implements TileGrid
 	private int rows;
 	private int columns;
 	private Tile[][]x;
+	private Tile[][]temp;
 			
 	public World(int rows, int columns)
 	{
@@ -81,9 +82,10 @@ public class World implements TileGrid
 					for(int j=0; j<columns;j++)
 					{
 						x[i][j]= new RainbowTile(num2);
-						redraw(r2,c2);
+						
 					}
 				}
+				redraw(r2,c2);
 			}
 			if(t.equals("constant"))
 			{
@@ -92,9 +94,9 @@ public class World implements TileGrid
 					for(int j=0; j<columns;j++)
 					{
 						x[i][j]= new ConstantTile(num2);
-						redraw(r2,c2);
 					}
 				}
+				redraw(r2,c2);
 			}
 		}
 		if (f.equals("evolve"))
