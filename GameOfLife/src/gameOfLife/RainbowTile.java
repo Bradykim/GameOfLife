@@ -11,7 +11,7 @@ public class RainbowTile implements Tile
 	}
 	public int getAge()
 	{
-		return ageTile;
+		return this.ageTile;
 	}
 	public Color getColor()
 	{
