@@ -77,9 +77,9 @@ public class World implements TileGrid
 			int c2= Integer.parseInt(c);
 			if(t.equals("rainbow"))
 			{
-				for(int i=0;i<r2;i++)
+				for(int i=0;i<rows;i++)
 				{
-					for(int j=0; j<c2;j++)
+					for(int j=0; j<columns;j++)
 					{
 						x[i][j]= new RainbowTile(num2);
 						
@@ -89,9 +89,9 @@ public class World implements TileGrid
 			}
 			if(t.equals("constant"))
 			{
-				for(int i=0;i<r2;i++)
+				for(int i=0;i<rows;i++)
 				{
-					for(int j=0; j<c2;j++)
+					for(int j=0; j<columns;j++)
 					{
 						x[i][j]= new ConstantTile(num2);
 					}
