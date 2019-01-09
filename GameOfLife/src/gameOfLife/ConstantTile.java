@@ -11,7 +11,7 @@ public class ConstantTile implements Tile
 	}
 	public int getAge()
 	{
-		return this.ageTile;
+		return ageTile;
 	}
 	public Color getColor()
 	{
