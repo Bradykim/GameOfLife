@@ -50,7 +50,7 @@ public class World implements TileGrid
 					for(int j=0; j<columns;j++)
 					{
 						x[i][j]= new RainbowTile(num2);
-						redraw(rows,columns,x);
+						core.API.paintSolidColor(i, j,x[i][j].getColor());
 					}
 				}
 			}
@@ -61,7 +61,7 @@ public class World implements TileGrid
 					for(int j=0; j<columns;j++)
 					{
 						x[i][j]= new ConstantTile(num2);
-						redraw(rows,columns,x);
+						core.API.paintSolidColor(i, j,x[i][j].getColor());
 					}
 				}
 			}
