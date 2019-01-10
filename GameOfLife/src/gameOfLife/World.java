@@ -19,7 +19,7 @@ public class World implements TileGrid
 				x[z][y]=new ConstantTile(0);
 			}
 		}
-		redraw(rows,columns);
+		redraw(rows,columns,x);
 	}
 	public Tile getTile(int rows,int columns)
 	{
@@ -29,7 +29,7 @@ public class World implements TileGrid
 	public void setTile(int row, int column, Tile tile)
 	{
 		tile= x[row][column];
-		redraw(rows,columns);
+		redraw(rows,columns,x);
 		
 	}
 	
@@ -77,26 +77,16 @@ public class World implements TileGrid
 			int c2= Integer.parseInt(c);
 			if(t.equals("rainbow"))
 			{
-				for(int i=0;i<rows;i++)
-				{
-					for(int j=0; j<columns;j++)
-					{
-						x[i][j]= new RainbowTile(num2);
-						
-					}
-				}
-				redraw(r2,c2);
+				RainbowTile y= new RainbowTile(num2);
+				this.x[r2][c2]= y;
+				redraw(r2,c2,x);
+				
 			}
 			if(t.equals("constant"))
 			{
-				for(int i=0;i<rows;i++)
-				{
-					for(int j=0; j<columns;j++)
-					{
-						x[i][j]= new ConstantTile(num2);
-					}
-				}
-				redraw(r2,c2);
+				RainbowTile y= new RainbowTile(num2);
+				x[r2][c2]= y;
+				redraw(r2,c2,x);
 			}
 		}
 		if (f.equals("evolve"))
@@ -112,17 +102,17 @@ public class World implements TileGrid
 				}
 			}
 			y= new Tile [rows][columns];
-			redraw(rows,columns);
+			
 		}
 		
 	}
-	public void redraw(int rows, int columns)
+	public void redraw(int rows, int columns,Tile[][]y)
 	{
 		for(int i=0;i<rows;i++)
 		{
 			for(int j=0; j<columns;j++)
 			{
-				core.API.paintSolidColor(i, j,x[i][j].getColor());
+				core.API.paintSolidColor(i, j,y[i][j].getColor());
 			}
 		}
 	}
