@@ -91,17 +91,17 @@ public class World implements TileGrid
 		}
 		if (f.equals("evolve"))
 		{
-			Tile[][]y;
-			y=new Tile [rows][columns];
+			Tile[][] y = new Tile [rows][columns];
 			for(int i=0;i<rows;i++)
 			{
 				for(int j=0; j<columns;j++)
 				{
-					ConstantTile t= new ConstantTile(0);
-					y[i][j]= t.getUpdatedTile(null);
+					y[rows][columns]= x[i][j].getUpdatedTile(null);
+					
 				}
 			}
-			y= new Tile [rows][columns];
+			x= y;
+			redraw(rows,columns,x);
 			
 		}
 		
