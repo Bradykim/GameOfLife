@@ -28,7 +28,7 @@ public class World implements TileGrid
 	}
 	public void setTile(int row, int column, Tile tile)
 	{
-		tile= x[row][column];
+		x[row][column]= tile;
 		redraw(rows,columns,x);
 		
 	}
@@ -68,23 +68,23 @@ public class World implements TileGrid
 		}
 		if(f.equals("set"))
 		{
-			String t= s[1];
-			String num=s[2];
-			int num2= Integer.parseInt(num);
+			String type= s[1];
+			String age=s[2];
+			int age2= Integer.parseInt(age);
 			String r=s[3];
 			int r2= Integer.parseInt(r);
 			String c=s[4];
 			int c2= Integer.parseInt(c);
-			if(t.equals("rainbow"))
+			if(type.equals("rainbow"))
 			{
-				RainbowTile y= new RainbowTile(num2);
+				RainbowTile y= new RainbowTile(age2);
 				this.x[r2][c2]= y;
 				redraw(r2,c2,x);
 				
 			}
-			if(t.equals("constant"))
+			if(type.equals("constant"))
 			{
-				RainbowTile y= new RainbowTile(num2);
+				ConstantTile y= new ConstantTile(age2);
 				x[r2][c2]= y;
 				redraw(r2,c2,x);
 			}
