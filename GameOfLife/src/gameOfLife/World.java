@@ -96,8 +96,8 @@ public class World implements TileGrid
 			{
 				for(int j=0; j<columns;j++)
 				{
-					y[rows][columns]= x[i][j].getUpdatedTile(null);
-					
+					Tile hi = x[i][j].getUpdatedTile(null);
+					y[i][j] = hi;
 				}
 			}
 			x= y;
