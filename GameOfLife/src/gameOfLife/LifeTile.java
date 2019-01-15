@@ -16,7 +16,7 @@ public abstract class LifeTile implements Tile
 	
 	public abstract Color getColor();
 	
-	public abstract LifeTile getUpdatedtile(Tile [] neighbors);
+	public abstract Tile getUpdatedtile(Tile [] neighbors);
 	
 	 public int getNumActiveNeighbors (Tile[] neighbors)
 	 {

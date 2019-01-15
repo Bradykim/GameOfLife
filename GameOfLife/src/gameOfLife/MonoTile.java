@@ -21,7 +21,7 @@ public class MonoTile extends LifeTile
 		}
 		return r;
 	}
-	public MonoTile getUpdatedtile(Tile[] neighbors)
+	public Tile getUpdatedtile(Tile[] neighbors)
 	{
 		int active= getNumActiveNeighbors(neighbors);
 		if(getAge()>0)
@@ -45,12 +45,7 @@ public class MonoTile extends LifeTile
 		}
 		return new MonoTile(0);
 	}
-	@Override
-	public Tile getUpdatedTile(Tile[] neighbors)
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
+
 	
 	
 }
