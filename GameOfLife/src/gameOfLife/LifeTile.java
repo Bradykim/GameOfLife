@@ -2,7 +2,7 @@ package gameOfLife;
 
 import java.awt.Color;
 
-public abstract class LifeTile
+public abstract class LifeTile implements Tile
 {
 	private int ageTile;
 	public LifeTile(int ageTile)
