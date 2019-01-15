@@ -21,7 +21,7 @@ public class MonoTile extends LifeTile
 		}
 		return r;
 	}
-	public Tile getUpdatedtile(Tile[] neighbors)
+	public Tile getUpdatedTile(Tile[] neighbors)
 	{
 		int active= getNumActiveNeighbors(neighbors);
 		if(getAge()>0)
@@ -45,6 +45,8 @@ public class MonoTile extends LifeTile
 		}
 		return new MonoTile(0);
 	}
+	
+	
 
 	
 	
