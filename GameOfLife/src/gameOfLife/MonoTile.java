@@ -45,4 +45,12 @@ public class MonoTile extends LifeTile
 		}
 		return new MonoTile(0);
 	}
+	@Override
+	public Tile getUpdatedTile(Tile[] neighbors)
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	
 }
