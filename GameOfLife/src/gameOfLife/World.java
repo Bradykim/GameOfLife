@@ -5,7 +5,7 @@ public class World implements TileGrid
 	private int columns;
 	private Tile[][]x;
 	private Tile[][]temp;
-			
+
 	public World(int rows, int columns)
 	{
 		this.rows=rows;
@@ -30,14 +30,14 @@ public class World implements TileGrid
 	{
 		x[row][column]= tile;
 		redraw(rows,columns,x);
-		
+
 	}
-	
+
 	public void processCommand(String command)
 	{
 		String []s= command.split(" ");
 		String f= s[0];
-		
+
 		if(f.equals("fill"))
 		{
 			String t= s[1];
@@ -65,6 +65,17 @@ public class World implements TileGrid
 					}
 				}
 			}
+			if(t.equals("mono"))
+			{
+				for(int i=0;i<rows;i++)
+				{
+					for(int j=0; j<columns;j++)
+					{
+						x[i][j]= new MonoTile(num2);
+						core.API.paintSolidColor(i, j,x[i][j].getColor());
+					}
+				}
+			}
 		}
 		if(f.equals("set"))
 		{
@@ -80,11 +91,17 @@ public class World implements TileGrid
 				RainbowTile y= new RainbowTile(age2);
 				this.x[r2][c2]= y;
 				redraw(r2,c2,x);
-				
+
 			}
 			if(type.equals("constant"))
 			{
 				ConstantTile y= new ConstantTile(age2);
+				x[r2][c2]= y;
+				redraw(r2,c2,x);
+			}
+			if(type.equals("mono"))
+			{
+				MonoTile y= new MonoTile(age2);
 				x[r2][c2]= y;
 				redraw(r2,c2,x);
 			}
@@ -102,9 +119,9 @@ public class World implements TileGrid
 			}
 			x=y;
 			redraw(rows,columns,x);
-			
+
 		}
-		
+
 	}
 	public void redraw(int rows, int columns,Tile[][]y)
 	{
