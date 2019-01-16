@@ -108,18 +108,48 @@ public class World implements TileGrid
 		}
 		if (f.equals("evolve"))
 		{
+			String pause= s[2];
+			int pauseMs= Integer.parseInt(pause);
+			String steps1= s[1];
+			int steps= Integer.parseInt(steps1);
 			Tile[][] y = new Tile [rows][columns];
 			for(int i=0;i<rows;i++)
 			{
 				for(int j=0; j<columns;j++)
 				{
-					Tile hi = x[i][j].getUpdatedTile(null);
+					Tile[][] z= new Tile[3][3];
+					
+					//code for right tile
+					[1][2]z= [i][j+1]y;
+					
+					//code for bottom right tile
+					[2][2]z = [i+1][j+1]y;
+					
+					//code for top right tile
+					[0][2]z= [i-1][j+1]y;
+					
+					//code for left tile
+					[1][0]z= [i][j-1]y;
+					
+					//code for bottom left tile
+					[2][0]z= [i+1][j-1]y;
+					
+					//code for top left tile
+					[0][0]z= [i-1][j-1]y;
+					
+					//code for top tile
+					[0][1]= [i-1][j]y;
+					
+					//code for bottom tile
+					[2][1]= [i+1][j]y
+					
+					Tile hi = x[i][j].getUpdatedTile(z);
 					y[i][j] = hi;
 				}
 			}
 			x=y;
 			redraw(rows,columns,x);
-
+			core.API.pause(pauseMs);
 		}
 
 	}
