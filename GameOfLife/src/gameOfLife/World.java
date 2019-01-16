@@ -117,31 +117,31 @@ public class World implements TileGrid
 			{
 				for(int j=0; j<columns;j++)
 				{
-					Tile[][] z= new Tile[3][3];
-					
-					//code for right tile
-					[1][2]z= [i][j+1]y;
-					
-					//code for bottom right tile
-					[2][2]z = [i+1][j+1]y;
-					
-					//code for top right tile
-					[0][2]z= [i-1][j+1]y;
-					
-					//code for left tile
-					[1][0]z= [i][j-1]y;
-					
-					//code for bottom left tile
-					[2][0]z= [i+1][j-1]y;
-					
+					Tile[] z= new Tile[8];
+
 					//code for top left tile
-					[0][0]z= [i-1][j-1]y;
+					z[0]= y[i-1][j-1];
 					
 					//code for top tile
-					[0][1]= [i-1][j]y;
+					z[1]= y[i-1][j];
+					
+					//code for top right tile
+					z[2] =  y[i-1][j+1];
+					
+					//code for left tile
+					z[3]= y[i][j-1];
+					
+					//code for right tile
+					z[4]= y[i][j+1];
+					
+					//code for bottom left tile
+					z[5]= y[i+1][j-1];
 					
 					//code for bottom tile
-					[2][1]= [i+1][j]y
+					z[6]= y[i+1][j];
+					
+					//code for bottom right tile
+					z[7] = y[i+1][j+1];
 					
 					Tile hi = x[i][j].getUpdatedTile(z);
 					y[i][j] = hi;
