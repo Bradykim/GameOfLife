@@ -113,43 +113,47 @@ public class World implements TileGrid
 			String steps1= s[1];
 			int steps= Integer.parseInt(steps1);
 			Tile[][] y = new Tile [rows][columns];
-			for(int i=0;i<rows;i++)
+			for(int e= 0; e<steps; e++)
 			{
-				for(int j=0; j<columns;j++)
+				for(int i=0;i<rows;i++)
 				{
-					Tile[] z= new Tile[8];
+					for(int j=0; j<columns;j++)
+					{
+						Tile[] z= new Tile[8];
 
-					//code for top left tile
-					z[0]= y[i-1][j-1];
-					
-					//code for top tile
-					z[1]= y[i-1][j];
-					
-					//code for top right tile
-					z[2] =  y[i-1][j+1];
-					
-					//code for left tile
-					z[3]= y[i][j-1];
-					
-					//code for right tile
-					z[4]= y[i][j+1];
-					
-					//code for bottom left tile
-					z[5]= y[i+1][j-1];
-					
-					//code for bottom tile
-					z[6]= y[i+1][j];
-					
-					//code for bottom right tile
-					z[7] = y[i+1][j+1];
-					
-					Tile hi = x[i][j].getUpdatedTile(z);
-					y[i][j] = hi;
+						//code for top left tile
+						z[0]= y[(i-1)%6][(j-1)%6];
+						
+						//code for top tile
+						z[1]= y[(i-1)%6][(j)%6];
+						
+						//code for top right tile
+						z[2] =  y[(i-1)%6][(j+1)%6];
+						
+						//code for left tile
+						z[3]= y[i%6][(j-1)%6];
+						
+						//code for right tile
+						z[4]= y[i%6][(j+1)%6];
+						
+						//code for bottom left tile
+						z[5]= y[(i+1)%6][(j-1)%6];
+						
+						//code for bottom tile
+						z[6]= y[(i+1)%6][j%6];
+						
+						//code for bottom right tile
+						z[7] = y[(i+1)%6][(j+1)%6];
+						
+						Tile hi = x[i][j].getUpdatedTile(z);
+						y[i][j] = hi;
+					}
 				}
+				x=y;
+				redraw(rows,columns,x);
+				core.API.pause(pauseMs);
 			}
-			x=y;
-			redraw(rows,columns,x);
-			core.API.pause(pauseMs);
+			
 		}
 
 	}
