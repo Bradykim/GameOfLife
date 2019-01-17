@@ -120,31 +120,76 @@ public class World implements TileGrid
 					for(int j=0; j<columns;j++)
 					{
 						Tile[] z= new Tile[8];
-
-						//code for top left tile
-						z[0]= y[(i-1)+rows][(j-1)+columns];
 						
-						//code for top tile
-						z[1]= y[(i-1)+rows][(j)%columns];
+						if((i-1)<0 && (j-1)<0)
+						{
+							//code for top left tile
+							z[0]= y[(i-1)+rows][(j-1)+columns];
+							
+						}
+						else
+						{
+							//code for top left tile
+							z[0]= y[(i-1)][(j-1)];
+						}
 						
-						//code for top right tile
-						z[2] =  y[(i-1)+rows][(j+1)%columns];
+						if((i-1)<0)
+						{
+							//code for top tile
+							z[1]= y[(i-1)+rows][(j)%columns];
+						}
+						else
+						{
+							//code for top tile
+							z[1]= y[(i-1)][(j)];
+						}
 						
-						//code for left tile
-						z[3]= y[i%rows][(j-1)+columns];
+						if((i-1)<0)
+						{
+							//code for top right tile
+							z[2] =  y[(i-1)+rows][(j+1)%columns];
+						}
+						else
+						{
+							//code for top right tile
+							z[2] =  y[(i-1)][(j+1)];
+						}
+							
+						if((j-1)<0)
+						{
+							//code for left tile
+							z[3]= y[i%rows][(j-1)+columns];
+						}
+						else
+						{
+							//code for left tile
+							z[3]= y[i][(j-1)];
+						}
 						
-						//code for right tile
-						z[4]= y[i%rows][(j+1)%columns];
+							
+							
+							
+							//code for right tile
+							z[4]= y[i%rows][(j+1)%columns];
+						if((j-1)<0)
+						{
+							//code for bottom left tile
+							z[5]= y[(i+1)%rows][(j-1)+columns];
+						}
+						else
+						{
+							//code for bottom left tile
+							z[5]= y[(i+1)][(j-1)];
+						}
 						
-						//code for bottom left tile
-						z[5]= y[(i+1)%rows][(j-1)+columns];
-						
-						//code for bottom tile
-						z[6]= y[(i+1)%rows][j%columns];
-						
-						//code for bottom right tile
-						z[7] = y[(i+1)%rows][(j+1)%columns];
-						
+							
+							//code for bottom tile
+							z[6]= y[(i+1)%rows][j%columns];
+							
+							//code for bottom right tile
+							z[7] = y[(i+1)%rows][(j+1)%columns];
+							
+						}
 						Tile hi = x[i][j].getUpdatedTile(z);
 						y[i][j] = hi;
 					}
