@@ -164,11 +164,10 @@ public class World implements TileGrid
 					//code for tile to the bottom left
 					z[7]= y[LeftOne][DownOne];
 					
-					Tile hi = x[i][j].getUpdatedTile(z);
+					Tile hi = y[i][j].getUpdatedTile(z);
 					y[i][j] = hi;
 				}
 			}
-			
 			x = y;
 			redraw(rows, columns, x);
 			core.API.pause(pauseMs);
