@@ -122,11 +122,12 @@ public class World implements TileGrid
 			String steps1= s[1];
 			int steps= Integer.parseInt(steps1);
 			Tile[][] y = new Tile [rows][columns];
+			Tile[] z = new Tile[8];
 			for(int i=0;i<rows;i++)
 			{
 				for(int j=0; j<columns;j++)
 				{
-					Tile[] z = new Tile[8];
+					
 					int UpOne= (j+1)%columns;
 					int DownOne= (j-1)%columns;
 					if((j-1)<0)
@@ -164,6 +165,12 @@ public class World implements TileGrid
 					//code for tile to the bottom left
 					z[7]= y[LeftOne][DownOne];
 					
+						for(int o=0; o<z.length;o++)
+						{
+							System.out.println(z[o]);
+						}
+						System.out.println("/n");
+						
 					Tile hi = x[i][j].getUpdatedTile(z);
 					y[i][j] = hi;
 				}
