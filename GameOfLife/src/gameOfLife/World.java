@@ -108,97 +108,70 @@ public class World implements TileGrid
 		}
 		if (f.equals("evolve"))
 		{
+			// Loop -> all the tiles in a new grid
+			
+			// In loop
+				// Call get ns
+				// Put the value in to get update tilke
+				// Put that tile in to the place of the array
+			
+			//Outside of loop
+			//Draw
 			String pause= s[2];
 			int pauseMs= Integer.parseInt(pause);
 			String steps1= s[1];
 			int steps= Integer.parseInt(steps1);
 			Tile[][] y = new Tile [rows][columns];
-			for(int e= 0; e<steps; e++)
+			for(int i=0;i<rows;i++)
 			{
-				for(int i=0;i<rows;i++)
+				for(int j=0; j<columns;j++)
 				{
-					for(int j=0; j<columns;j++)
+					Tile[] z = new Tile[8];
+					int UpOne= (j+1)%columns;
+					int DownOne= (j-1)%columns;
+					if((j-1)<0)
 					{
-						Tile[] z= new Tile[8];
-						
-						if((i-1)<0 && (j-1)<0)
-						{
-							//code for top left tile
-							z[0]= y[(i-1)+rows][(j-1)+columns];
-							
-						}
-						else
-						{
-							//code for top left tile
-							z[0]= y[(i-1)][(j-1)];
-						}
-						
-						if((i-1)<0)
-						{
-							//code for top tile
-							z[1]= y[(i-1)+rows][(j)%columns];
-						}
-						else
-						{
-							//code for top tile
-							z[1]= y[(i-1)][(j)];
-						}
-						
-						if((i-1)<0)
-						{
-							//code for top right tile
-							z[2] =  y[(i-1)+rows][(j+1)%columns];
-						}
-						else
-						{
-							//code for top right tile
-							z[2] =  y[(i-1)][(j+1)];
-						}
-							
-						if((j-1)<0)
-						{
-							//code for left tile
-							z[3]= y[i%rows][(j-1)+columns];
-						}
-						else
-						{
-							//code for left tile
-							z[3]= y[i][(j-1)];
-						}
-						
-							
-							
-							
-							//code for right tile
-							z[4]= y[i%rows][(j+1)%columns];
-						if((j-1)<0)
-						{
-							//code for bottom left tile
-							z[5]= y[(i+1)%rows][(j-1)+columns];
-						}
-						else
-						{
-							//code for bottom left tile
-							z[5]= y[(i+1)][(j-1)];
-						}
-						
-							
-							//code for bottom tile
-							z[6]= y[(i+1)%rows][j%columns];
-							
-							//code for bottom right tile
-							z[7] = y[(i+1)%rows][(j+1)%columns];
-							
-						}
-						Tile hi = x[i][j].getUpdatedTile(z);
-						y[i][j] = hi;
+						DownOne= (j-1)+columns;
 					}
+					int RightOne= (i+1)%rows;
+					int LeftOne= (i-1)%rows;
+					if((i-1)<0)
+					{
+						LeftOne= (i-1)+rows;
+					}
+					
+					//Code for Tile right above
+					z[0]= y[i][UpOne];
+					
+					//Code for tile to the Right
+					z[1]= y[RightOne][j];
+					
+					//Code for Tile right below
+					z[2]= y[i][DownOne];
+					
+					//Code for Tile to the left
+					z[3]= y[LeftOne][j];
+					
+					//code for Tile to the Upper left
+					z[4]= y[LeftOne][UpOne];
+					
+					//Code for tile to the upper right
+					z[5]= y[RightOne][UpOne];
+					
+					//code for tile to the bottom right
+					z[6]= y[RightOne][UpOne];
+					
+					//code for tile to the bottom left
+					z[7]= y[LeftOne][DownOne];
+					
+					Tile hi = x[i][j].getUpdatedTile(z);
+					y[i][j] = hi;
 				}
-				x=y;
-				redraw(rows,columns,x);
-				core.API.pause(pauseMs);
 			}
 			
+			x = y;
+			redraw(rows, columns, x);
+			core.API.pause(pauseMs);
 		}
 
 	}
@@ -212,5 +185,5 @@ public class World implements TileGrid
 			}
 		}
 	}
-}
 
+}
