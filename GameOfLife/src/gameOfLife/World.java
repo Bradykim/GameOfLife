@@ -122,37 +122,45 @@ public class World implements TileGrid
 			String steps1= s[1];
 			int steps= Integer.parseInt(steps1);
 			Tile[][] y = new Tile [rows][columns];
-			for(int i=0;i<rows;i++)
+			for(int r=0;r<rows;r++)
 			{
-				for(int j=0; j<columns;j++)
+				for(int c=0; c<columns;c++)
 				{
 					Tile[] z = new Tile[8];
-					int UpOne= (j+1)%columns;
 					
-					int DownOne= (j-1)%columns;
-					if((j-1)<0)
+					int UpOne= (c+1);
+					if((c+1)>(columns-1))
 					{
-						DownOne= (j-1)+columns;
+						UpOne= (c+1)%columns;
 					}
-					int RightOne= (i+1)%rows;
-					
-					int LeftOne= (i-1)%rows;
-					if((i-1)<0)
+					int DownOne= (c-1);
+					if((c-1)<0)
 					{
-						LeftOne= (i-1)+rows;
+						DownOne= ((c-1)+columns)%columns;
+					}
+					int RightOne= (r+1);
+					if((r+1)>(columns-1))
+					{
+						RightOne=(r+1)%rows;
+					}
+					
+					int LeftOne= (r-1)%rows;
+					if((r-1)<0)
+					{
+						LeftOne= ((r-1)+rows)%rows;
 					}
 					
 					//Code for Tile right above
-					z[0]= y[i][UpOne];
+					z[0]= y[r][UpOne];
 					
 					//Code for tile to the Right
-					z[1]= y[RightOne][j];
+					z[1]= y[RightOne][c];
 					
 					//Code for Tile right below
-					z[2]= y[i][DownOne];
+					z[2]= y[r][DownOne];
 					
 					//Code for Tile to the left
-					z[3]= y[LeftOne][j];
+					z[3]= y[LeftOne][c];
 					
 					//code for Tile to the Upper left
 					z[4]= y[LeftOne][UpOne];
@@ -172,8 +180,8 @@ public class World implements TileGrid
 						}
 						System.out.println("/n");
 						
-					Tile hi = x[i][j].getUpdatedTile(z);
-					y[i][j] = hi;
+					Tile hi = x[r][c].getUpdatedTile(z);
+					y[r][c] = hi;
 				}
 			}
 			x = y;
