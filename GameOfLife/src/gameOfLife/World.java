@@ -159,7 +159,7 @@ public class World implements TileGrid
 					z[5]= y[RightOne][UpOne];
 					
 					//code for tile to the bottom right
-					z[6]= y[RightOne][UpOne];
+					z[6]= y[RightOne][DownOne];
 					
 					//code for tile to the bottom left
 					z[7]= y[LeftOne][DownOne];
