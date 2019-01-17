@@ -122,22 +122,22 @@ public class World implements TileGrid
 						Tile[] z= new Tile[8];
 
 						//code for top left tile
-						z[0]= y[(i-1)%rows][(j-1)%columns];
+						z[0]= y[(i-1)+rows][(j-1)+columns];
 						
 						//code for top tile
-						z[1]= y[(i-1)%rows][(j)%columns];
+						z[1]= y[(i-1)+rows][(j)%columns];
 						
 						//code for top right tile
-						z[2] =  y[(i-1)%rows][(j+1)%columns];
+						z[2] =  y[(i-1)+rows][(j+1)%columns];
 						
 						//code for left tile
-						z[3]= y[i%rows][(j-1)%columns];
+						z[3]= y[i%rows][(j-1)+columns];
 						
 						//code for right tile
 						z[4]= y[i%rows][(j+1)%columns];
 						
 						//code for bottom left tile
-						z[5]= y[(i+1)%rows][(j-1)%columns];
+						z[5]= y[(i+1)%rows][(j-1)+columns];
 						
 						//code for bottom tile
 						z[6]= y[(i+1)%rows][j%columns];
