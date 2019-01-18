@@ -112,12 +112,13 @@ public class World implements TileGrid
 			int pauseMs= Integer.parseInt(pause);
 			String steps1= s[1];
 			int steps= Integer.parseInt(steps1);
-			Tile[][] y = new Tile [rows][columns];
 			for(int i=0; i<steps;i++)
 			{
-				for(int r=0;r<rows;r++)
+
+				Tile[][] y = new Tile [rows][columns];
+				for(int r=0;r<x.length;r++)
 				{
-					for(int c=0; c<columns;c++)
+					for(int c=0; c<x[0].length;c++)
 					{
 						Tile[] z = new Tile[8];
 						int UpOne= (r-1)%rows;
