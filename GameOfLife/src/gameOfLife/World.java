@@ -120,10 +120,17 @@ public class World implements TileGrid
 					for(int c=0; c<columns;c++)
 					{
 						Tile[] z = new Tile[8];
-						int UpOne= (((r-1)+rows)%rows);
-						int DownOne= (r+rows)%rows;
-						int RightOne=(c+columns)%columns;
-						int LeftOne= (((c-1)+columns)%columns);
+						int UpOne= (r-1)%rows;
+						int DownOne= (r+1)%rows;
+						int RightOne=(c+1)%columns;
+						int LeftOne= (c-1)%columns;
+						
+						if(UpOne < 0){
+							UpOne = rows - 1;
+						}
+						if (LeftOne < 0){
+							LeftOne = columns - 1;
+						}
 						
 						//Code for Tile right above
 						z[0]= x[UpOne][c];
