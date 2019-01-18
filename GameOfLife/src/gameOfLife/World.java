@@ -156,9 +156,6 @@ public class World implements TileGrid
 						//code for tile to the bottom left
 						z[7]= x[DownOne][LeftOne];
 						
-						for (Tile t: z){
-							System.out.println(t.getAge());
-						}
 							y[r][c]= x[r][c].getUpdatedTile(z);
 						 
 					}
