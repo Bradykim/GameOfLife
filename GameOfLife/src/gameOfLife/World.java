@@ -147,28 +147,28 @@ public class World implements TileGrid
 						}
 						
 						//Code for Tile right above
-						z[0]= y[UpOne][c];
+						z[0]= x[UpOne][c];
 						
 						//Code for tile to the Right
-						z[1]= y[r][RightOne];
+						z[1]= x[r][RightOne];
 						
 						//Code for Tile right below
-						z[2]= y[DownOne][c];
+						z[2]= x[DownOne][c];
 						
 						//Code for Tile to the left
-						z[3]= y[r][LeftOne];
+						z[3]= x[r][LeftOne];
 						
 						//code for Tile to the Upper left
-						z[4]= y[UpOne][LeftOne];
+						z[4]= x[UpOne][LeftOne];
 						
 						//Code for tile to the upper right
-						z[5]= y[UpOne][RightOne];
+						z[5]= x[UpOne][RightOne];
 						
 						//code for tile to the bottom right
-						z[6]= y[DownOne][RightOne];
+						z[6]= x[DownOne][RightOne];
 						
 						//code for tile to the bottom left
-						z[7]= y[DownOne][LeftOne];
+						z[7]= x[DownOne][LeftOne];
 						
 							for(int o=0; o<z.length;o++)
 							{
