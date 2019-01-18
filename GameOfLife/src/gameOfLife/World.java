@@ -4,7 +4,6 @@ public class World implements TileGrid
 	private int rows;
 	private int columns;
 	private Tile[][]x;
-	private Tile[][]temp;
 
 	public World(int rows, int columns)
 	{
@@ -125,30 +124,7 @@ public class World implements TileGrid
 						int DownOne= (r+rows)%rows;
 						int RightOne=(c+columns)%columns;
 						int LeftOne= (((c-1)+columns)%columns);
-						/*int UpOne= (r-1);
-						if((r-1)<0)
-						{
-							UpOne= (((r-1)+rows)%rows);
-						}
 						
-						int DownOne= (r+1);
-						if((r+1)>rows)
-						{
-							DownOne= (r+1)%rows;
-						}
-						
-						int RightOne= (c+1);
-						if((c+1)>columns)
-						{
-							RightOne=(c+1)%columns;
-						}
-						
-						int LeftOne= (c-1);
-						if((c-1)<0)
-						{
-							LeftOne= (((c-1)+columns)%columns);
-						}
-						*/
 						//Code for Tile right above
 						z[0]= x[UpOne][c];
 						
@@ -201,5 +177,28 @@ public class World implements TileGrid
 			}
 		}
 	}
-
+	/*int UpOne= (r-1);
+	if((r-1)<0)
+	{
+		UpOne= (((r-1)+rows)%rows);
+	}
+	
+	int DownOne= (r+1);
+	if((r+1)>rows)
+	{
+		DownOne= (r+1)%rows;
+	}
+	
+	int RightOne= (c+1);
+	if((c+1)>columns)
+	{
+		RightOne=(c+1)%columns;
+	}
+	
+	int LeftOne= (c-1);
+	if((c-1)<0)
+	{
+		LeftOne= (((c-1)+columns)%columns);
+	}
+	*/
 }
