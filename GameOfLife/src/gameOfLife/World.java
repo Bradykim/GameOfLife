@@ -159,11 +159,12 @@ public class World implements TileGrid
 						 
 					}
 				}
+				x = y;
+				redraw(rows, columns, x);
+				core.API.pause(pauseMs);
 			}
 			
-			x = y;
-			redraw(rows, columns, x);
-			core.API.pause(pauseMs);
+			
 		}
 
 	}
