@@ -143,7 +143,7 @@ public class World implements TileGrid
 						int LeftOne= (c-1);
 						if((c-1)<0)
 						{
-							LeftOne= ((c-1)+columns);
+							LeftOne= (((c-1)+columns)%columns);
 						}
 						
 						//Code for Tile right above
@@ -175,9 +175,9 @@ public class World implements TileGrid
 								System.out.println(z[o]);
 							}
 							System.out.println("/n");
-							
-						Tile hi = x[r][c].getUpdatedTile(z);
-						y[r][c] = hi;
+						
+							y[r][c]= x[r][c].getUpdatedTile(z);
+						 
 					}
 				}
 			}
