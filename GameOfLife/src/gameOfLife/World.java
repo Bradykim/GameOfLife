@@ -121,8 +121,11 @@ public class World implements TileGrid
 					for(int c=0; c<columns;c++)
 					{
 						Tile[] z = new Tile[8];
-						
-						int UpOne= (r-1);
+						int UpOne= (((r-1)+rows)%rows);
+						int DownOne= (r+rows)%rows;
+						int RightOne=(c+columns)%columns;
+						int LeftOne= (((c-1)+columns)%columns);
+						/*int UpOne= (r-1);
 						if((r-1)<0)
 						{
 							UpOne= (((r-1)+rows)%rows);
@@ -145,7 +148,7 @@ public class World implements TileGrid
 						{
 							LeftOne= (((c-1)+columns)%columns);
 						}
-						
+						*/
 						//Code for Tile right above
 						z[0]= x[UpOne][c];
 						
