@@ -21,14 +21,12 @@ public abstract class LifeTile implements Tile
 	 public int getNumActiveNeighbors (Tile[] neighbors)
 	 {
 		 int active =0;
-		 int spaces= neighbors.length;
-		 for(int x=0; x<spaces;x++)
-		 {
-			 if(neighbors[x].getAge()>0)
-			 {
+		 for (Tile tile : neighbors){
+			 if(tile.getAge() > 0){
 				 active++;
 			 }
 		 }
+		 
 		 return active;
 		 
 	 }

@@ -37,7 +37,7 @@ public class MonoTile extends LifeTile
 		}else{
 			if(active==3)
 			{
-				return new MonoTile (1);
+				return new MonoTile(1);
 			}
 			
 		}
