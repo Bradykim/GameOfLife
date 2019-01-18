@@ -149,7 +149,9 @@ public class World implements TileGrid
 						//code for tile to the bottom left
 						z[7]= x[DownOne][LeftOne];
 						
-						
+						for (Tile t: z){
+							System.out.println(t.getAge());
+						}
 							y[r][c]= x[r][c].getUpdatedTile(z);
 						 
 					}
@@ -165,9 +167,9 @@ public class World implements TileGrid
 	}
 	public void redraw(int rows, int columns,Tile[][]y)
 	{
-		for(int i=0;i<rows;i++)
+		for(int i=0;i<y.length;i++)
 		{
-			for(int j=0; j<columns;j++)
+			for(int j=0; j<y[0].length;j++)
 			{
 				core.API.paintSolidColor(i, j,y[i][j].getColor());
 			}
