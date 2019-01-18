@@ -26,7 +26,7 @@ public class MonoTile extends LifeTile
 		int active= getNumActiveNeighbors(neighbors);
 		if(getAge()>0)
 		{
-			if(active==2 || active==3)
+			if(active==2||active==3)
 			{
 				return new MonoTile(getAge()+1);
 			}

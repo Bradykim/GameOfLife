@@ -126,11 +126,13 @@ public class World implements TileGrid
 						int RightOne=(c+1)%columns;
 						int LeftOne= (c-1)%columns;
 						
-						if(UpOne < 0){
-							UpOne = rows - 1;
+						if(UpOne < 0)
+						{
+							UpOne = rows-1;
 						}
-						if (LeftOne < 0){
-							LeftOne = columns - 1;
+						if (LeftOne < 0)
+						{
+							LeftOne = columns-1;
 						}
 						
 						//Code for Tile right above
@@ -157,7 +159,7 @@ public class World implements TileGrid
 						//code for tile to the bottom left
 						z[7]= x[DownOne][LeftOne];
 						
-							y[r][c]= x[r][c].getUpdatedTile(z);
+						y[r][c]= x[r][c].getUpdatedTile(z);
 						 
 					}
 				}
@@ -180,28 +182,5 @@ public class World implements TileGrid
 			}
 		}
 	}
-	/*int UpOne= (r-1);
-	if((r-1)<0)
-	{
-		UpOne= (((r-1)+rows)%rows);
-	}
-	
-	int DownOne= (r+1);
-	if((r+1)>rows)
-	{
-		DownOne= (r+1)%rows;
-	}
-	
-	int RightOne= (c+1);
-	if((c+1)>columns)
-	{
-		RightOne=(c+1)%columns;
-	}
-	
-	int LeftOne= (c-1);
-	if((c-1)<0)
-	{
-		LeftOne= (((c-1)+columns)%columns);
-	}
-	*/
+
 }
