@@ -15,7 +15,7 @@ public class MonoTile extends LifeTile
 		{
 			r= Color.BLACK;
 		}
-		else if(getAge()==1)
+		else
 		{
 			r= Color.WHITE;
 		}
