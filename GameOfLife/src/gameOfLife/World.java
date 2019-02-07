@@ -170,6 +170,7 @@ public class World implements TileGrid
 			
 			
 		}
+		/*
 		if(f.equals("setCopycats"))
 		{
 			String pattern= s[1];
@@ -188,6 +189,7 @@ public class World implements TileGrid
 						
 			}
 		}
+		*/
 
 	}
 	public void redraw(int rows, int columns,Tile[][]y)
