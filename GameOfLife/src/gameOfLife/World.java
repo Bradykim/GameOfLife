@@ -170,6 +170,24 @@ public class World implements TileGrid
 			
 			
 		}
+		if(f.equals("setCopycats"))
+		{
+			String pattern= s[1];
+			if(pattern.equals("mirror"))
+			{
+				Tile[][] z = new Tile [rows][columns];
+				for(int r=0;r<x.length;r++)
+				{
+					for(int c=0; c<x[0].length/2;c++)
+					{
+						if(x[r][c] != null)
+						{
+							
+						}
+					}
+						
+			}
+		}
 
 	}
 	public void redraw(int rows, int columns,Tile[][]y)
