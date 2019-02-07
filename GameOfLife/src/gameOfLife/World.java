@@ -36,7 +36,7 @@ public class World implements TileGrid
 	{
 		String []s= command.split(" ");
 		String f= s[0];
-		while(f.equals("setCopycats"))
+		if(f.equals("setCopycats"))
 		{
 			String pattern= s[1];
 			if(pattern.equals("mirror"))
