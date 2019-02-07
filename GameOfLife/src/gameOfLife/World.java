@@ -170,7 +170,7 @@ public class World implements TileGrid
 			
 			
 		}
-		/*
+		//
 		if(f.equals("setCopycats"))
 		{
 			String pattern= s[1];
@@ -179,17 +179,43 @@ public class World implements TileGrid
 				Tile[][] z = new Tile [rows][columns];
 				for(int r=0;r<x.length;r++)
 				{
-					for(int c=0; c<x[0].length/2;c++)
+					for(int c=x[0].length/2; c<x[0].length;c++)
 					{
 						if(x[r][c] != null)
 						{
-							
+							//z[r][columns-1-c]= new CopycatTile(r,c,);
 						}
 					}
+				}
 						
 			}
 		}
-		*/
+		if(f.equals("setShape"))
+		{
+			String shape = s[1];
+			String row1= s[2];
+			int row= Integer.parseInt(row1);
+			String column1= s[3];
+			int col= Integer.parseInt(column1);
+			if(shape.equals("glider"))
+			{
+				MonoTile g= new MonoTile(1);
+				//x[row][]
+				
+			}
+			if(shape.equals("oscillator"))
+			{
+				MonoTile o= new MonoTile(1);
+				x[row][col]= o;
+				MonoTile o1= new MonoTile(1);
+				x[row][col+1]= o1;
+				MonoTile o2= new MonoTile(1);
+				x[row][col+2]= o2;
+				redraw(rows,columns,x);
+				
+			}
+		}
+		
 
 	}
 	public void redraw(int rows, int columns,Tile[][]y)
