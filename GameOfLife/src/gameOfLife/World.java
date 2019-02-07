@@ -187,6 +187,8 @@ public class World implements TileGrid
 						}
 					}
 				}
+				x = z;
+				redraw(rows, columns, x);
 						
 			}
 		}
