@@ -183,7 +183,7 @@ public class World implements TileGrid
 					{
 						if(x[r][c] != null)
 						{
-							//z[r][columns-1-c]= new CopycatTile(r,c,);
+							z[r][columns-1-c]= new CopycatTile(r,c,this);
 						}
 					}
 				}
@@ -200,7 +200,20 @@ public class World implements TileGrid
 			if(shape.equals("glider"))
 			{
 				MonoTile g= new MonoTile(1);
-				//x[row][]
+				x[row][col+1]= g;
+				
+				MonoTile g1= new MonoTile(1);
+				x[row+1][col+2]= g1;
+				
+				MonoTile g2= new MonoTile(1);
+				x[row+2][col]= g2;
+				
+				MonoTile g3= new MonoTile(1);
+				x[row+2][col+1]=g3;
+				
+				MonoTile g4= new MonoTile(1);
+				x[row+2][col+2]= g4;
+				
 				
 			}
 			if(shape.equals("oscillator"))
