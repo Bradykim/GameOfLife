@@ -43,7 +43,7 @@ public class World implements TileGrid
 			{
 				for(int r=0;r<rows;r++)
 				{
-					for(int c=0; c<columns/2;c++)
+					for(int c=0; c<(columns/2);c++)
 					{
 						if(x[r][c] != null)
 						{
