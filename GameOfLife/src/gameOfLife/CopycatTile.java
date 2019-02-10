@@ -17,15 +17,13 @@ public class CopycatTile implements Tile
 	
 	public int getAge()
 	{
-		Tile til= x.getTile(row, column);
-		int age= til.getAge();
+		int age= x.getTile(row, column).getAge();
 		return age;
 	}
 	
 	public Color getColor()
 	{
-		Tile til= x.getTile(row, column);
-		Color c= til.getColor();
+		Color c= x.getTile(row, column).getColor();
 		return c;
 	}
 	
