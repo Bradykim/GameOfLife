@@ -41,17 +41,18 @@ public class World implements TileGrid
 			String pattern= s[1];
 			if(pattern.equals("mirror"))
 			{
-				for(int r=0;r<x.length;r++)
+				for(int r=0;r<rows;r++)
 				{
-					for(int c=x[0].length/2; c<x[0].length;c++)
+					for(int c=0; c<columns/2;c++)
 					{
 						if(x[r][c] != null)
 						{
 							x[r][columns-1-c]= new CopycatTile(r,c,this);
+							core.API.paintSolidColor(r, c,x[r][columns-1-c].getColor());
+							
 						}
 					}
 				}
-				redraw(rows, columns, x);
 						
 			}
 		}
