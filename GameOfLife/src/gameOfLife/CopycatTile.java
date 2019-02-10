@@ -27,7 +27,8 @@ public class CopycatTile implements Tile
 	
 	public Tile getUpdatedTile(Tile[] neighbors)
 	{
-		return x.getTile(row, column);
+		CopycatTile til= new CopycatTile(row,column,x);
+		return til;
 	}
 
 
