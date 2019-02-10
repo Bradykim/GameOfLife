@@ -17,12 +17,12 @@ public class CopycatTile implements Tile
 	
 	public int getAge()
 	{
-		return x.getTile(row, column).getAge();
+		return (x.getTile(row, column)).getAge();
 	}
 	
 	public Color getColor()
 	{
-		return x.getTile(row, column).getColor();
+		return (x.getTile(row, column)).getColor();
 	}
 	
 	public Tile getUpdatedTile(Tile[] neighbors)
