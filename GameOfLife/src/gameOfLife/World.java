@@ -41,18 +41,16 @@ public class World implements TileGrid
 			String pattern= s[1];
 			if(pattern.equals("mirror"))
 			{
-				Tile[][] z = new Tile [rows][columns];
 				for(int r=0;r<x.length;r++)
 				{
 					for(int c=x[0].length/2; c<x[0].length;c++)
 					{
 						if(x[r][c] != null)
 						{
-							z[r][columns-1-c]= new CopycatTile(r,c,this);
+							x[r][columns-1-c]= new CopycatTile(r,c,this);
 						}
 					}
 				}
-				x = z;
 				redraw(rows, columns, x);
 						
 			}
