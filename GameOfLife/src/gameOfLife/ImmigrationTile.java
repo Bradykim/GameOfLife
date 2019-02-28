@@ -4,13 +4,14 @@ import java.awt.Color;
 
 public class ImmigrationTile extends LifeTile
 {
+	private Color currentcolor;
 	public ImmigrationTile(int initialAge)
 	{
 		super(initialAge);
 	}
 	public Color getColor()
 	{
-		Color r = null;
+		Color r=null;
 		if(getAge()==0)
 		{
 			r= Color.BLACK;
@@ -25,6 +26,8 @@ public class ImmigrationTile extends LifeTile
 		}
 		return r;
 	}
+
+	
 	public Tile getUpdatedTile(Tile[] neighbors)
 	{
 		int active= getNumActiveNeighbors(neighbors);
