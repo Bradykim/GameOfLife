@@ -94,6 +94,17 @@ public class World implements TileGrid
 					}
 				}
 			}
+			if(t.equals("immigration"))
+			{
+				for(int i=0;i<rows;i++)
+				{
+					for(int j=0; j<columns;j++)
+					{
+						x[i][j]= new ImmigrationTile(num2);
+						core.API.paintSolidColor(i, j,x[i][j].getColor());
+					}
+				}
+			}
 		}
 		if(f.equals("set"))
 		{
@@ -118,6 +129,12 @@ public class World implements TileGrid
 				redraw(r2,c2,x);
 			}
 			if(type.equals("mono"))
+			{
+				MonoTile y= new MonoTile(age2);
+				x[r2][c2]= y;
+				redraw(r2,c2,x);
+			}
+			if(type.equals("immigration"))
 			{
 				MonoTile y= new MonoTile(age2);
 				x[r2][c2]= y;
