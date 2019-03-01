@@ -49,16 +49,16 @@ public class ImmigrationTile extends LifeTile
 	public Tile getUpdatedTile(Tile[] neighbors)
 	{
 		int active= getNumActiveNeighbors(neighbors);
+		Color c= 
 		if(getAge()>0)
 		{
 			if(active==2||active==3)
 			{
-				
-				return new ImmigrationTile(getAge()+1);
+				return new ImmigrationTile(getAge()+1,currentcolor);
 			}
 			else
 			{
-				return new ImmigrationTile(0);
+				return new ImmigrationTile(0,currentcolor);
 			}
 		}
 		else
