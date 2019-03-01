@@ -9,7 +9,7 @@ public class ImmigrationTile extends LifeTile
 	{
 		super(initialAge);
 	}
-	public Color getColor()
+	public Color setColor()
 	{
 		Color r=null;
 		if(getAge()==0)
