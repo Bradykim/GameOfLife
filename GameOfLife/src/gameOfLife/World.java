@@ -136,7 +136,7 @@ public class World implements TileGrid
 			}
 			if(type.equals("immigration"))
 			{
-				MonoTile y= new MonoTile(age2);
+				ImmigrationTile y= new ImmigrationTile(age2);
 				x[r2][c2]= y;
 				redraw(r2,c2,x);
 			}
