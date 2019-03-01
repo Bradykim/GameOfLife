@@ -29,15 +29,15 @@ public class ImmigrationTile extends LifeTile
 	public Color getColor()
 	{
 		Color c=null;
-		if(getAge()==0)
+		if(super.getAge()==0)
 		{
 			c= Color.BLACK;
 		}
-		else if(getAge()==1)
+		else if(super.getAge()==1)
 		{
 			c= Color.GREEN;
 		}
-		else if(getAge()==2)
+		else if(super.getAge()==2)
 		{
 			c= Color.BLUE;
 		}
