@@ -8,24 +8,25 @@ public class ImmigrationTile extends LifeTile
 	public ImmigrationTile(int initialAge)
 	{
 		super(initialAge);
-	}
-	public Color setColor()
-	{
-		Color r=null;
-		if(getAge()==0)
+		if(initialAge==0)
 		{
-			r= Color.BLACK;
+			currentcolor= Color.BLACK;
 		}
 		else if(getAge()==1)
 		{
-			r= Color.GREEN;
+			currentcolor= Color.GREEN;
 		}
 		else if(getAge()==2)
 		{
-			r= Color.BLUE;
+			currentcolor= Color.BLUE;
 		}
-		return r;
 	}
+	public ImmigrationTile(int initialAge,Color c)
+	{
+		super(initialAge);
+		currentcolor=c;
+	}
+
 
 	
 	public Tile getUpdatedTile(Tile[] neighbors)
@@ -35,6 +36,7 @@ public class ImmigrationTile extends LifeTile
 		{
 			if(active==2||active==3)
 			{
+				
 				return new ImmigrationTile(getAge()+1);
 			}
 			else
