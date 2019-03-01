@@ -26,7 +26,7 @@ public class ImmigrationTile extends LifeTile
 		super(initialAge);
 		currentcolor=c;
 	}
-	public Color getColor(int initialAge)
+	public Color getColor()
 	{
 		Color c=null;
 		if(getAge()==0)
