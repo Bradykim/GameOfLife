@@ -59,8 +59,7 @@ public class ImmigrationTile extends LifeTile
 			}
 			else
 			{
-				currentcolor= Color.BLACK;
-				return new ImmigrationTile(0,currentcolor);
+				return new ImmigrationTile(0,Color.BLACK);
 			}
 		}
 		else
@@ -73,10 +72,10 @@ public class ImmigrationTile extends LifeTile
 			{
 				return new ImmigrationTile(1,Color.BLUE);
 			}
+			
 				
 		}
-		currentcolor=Color.BLACK;
-		return new ImmigrationTile(0,currentcolor);
+		return new ImmigrationTile(0,Color.BLACK);
 		
 		
 	}
