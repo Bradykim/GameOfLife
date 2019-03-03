@@ -32,7 +32,7 @@ public class ImmigrationTile extends LifeTile
 	}
 
 
-	
+	//code for updated tile
 	public Tile getUpdatedTile(Tile[] neighbors)
 	{
 		int active= getNumActiveNeighbors(neighbors);
