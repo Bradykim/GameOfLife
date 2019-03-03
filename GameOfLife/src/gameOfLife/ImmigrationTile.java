@@ -24,24 +24,11 @@ public class ImmigrationTile extends LifeTile
 	public ImmigrationTile(int initialAge,Color c)
 	{
 		super(initialAge);
-		currentcolor=c;
+		this.currentcolor=c;
 	}
 	public Color getColor()
 	{
-		Color c=null;
-		if(super.getAge()==0)
-		{
-			c= Color.BLACK;
-		}
-		else if(super.getAge()==1)
-		{
-			c= Color.GREEN;
-		}
-		else if(super.getAge()==2)
-		{
-			c= Color.BLUE;
-		}
-		return c;
+		return currentcolor;
 	}
 
 
@@ -49,29 +36,49 @@ public class ImmigrationTile extends LifeTile
 	public Tile getUpdatedTile(Tile[] neighbors)
 	{
 		int active= getNumActiveNeighbors(neighbors);
-		Color curcolor= currentcolor;
+		int totalblue=0;
+		int totalgreen=0;
+		for(int i= 0; i<neighbors.length;i++)
+		{
+			int age=  neighbors[i].getAge();
+			Color c= neighbors[i].getColor();
+			if(c == Color.BLUE)
+			{
+				totalblue++;
+			}
+			else if(c== Color.GREEN)
+			{
+				totalgreen++;
+			}
+		}
 		if(getAge()>0)
 		{
 			if(active==2||active==3)
 			{
-				return new ImmigrationTile(getAge()+1,curcolor);
+				return new ImmigrationTile(getAge()+1,currentcolor);
 			}
 			else
 			{
-				curcolor= Color.BLACK;
-				return new ImmigrationTile(0,curcolor);
+				currentcolor= Color.BLACK;
+				return new ImmigrationTile(0,currentcolor);
 			}
 		}
 		else
 		{
-			if(active==3)
+			if(active==3 && totalgreen>totalblue)
 			{
-				return new ImmigrationTile(1);
+				return new ImmigrationTile(1,Color.GREEN);
 			}
-			
+			else if(active==3 && totalblue>totalgreen)
+			{
+				return new ImmigrationTile(1,Color.BLUE);
+			}
+				
 		}
-		curcolor=Color.BLACK;
-		return new ImmigrationTile(0,curcolor);
+		currentcolor=Color.BLACK;
+		return new ImmigrationTile(0,currentcolor);
+		
+		
 	}
 	
 }
